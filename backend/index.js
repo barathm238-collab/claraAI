@@ -1,17 +1,17 @@
-const express = require('express');
-const cors = require('cors');
+import express from "express";
+import cors from "cors";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "ClaraAI Backend Running 🚀" });
 });
 
-// Test API route
-app.get('/api/health', (req, res) => {
+// API for testing backend 
+app.get("/api/health", (req, res) => {
   res.json({
     status: "OK",
     service: "ClaraAI Backend",
