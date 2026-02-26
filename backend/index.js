@@ -7,7 +7,16 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('ClaraAI Backend Running 🚀');
+  res.json({ message: "ClaraAI Backend Running 🚀" });
+});
+
+// Test API route
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: "OK",
+    service: "ClaraAI Backend",
+    timestamp: new Date()
+  });
 });
 
 const PORT = 3001;
