@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes panGrid {
+  0% {
+    background-position: 0px 0px, 0px 0px;
+  }
+
+  100% {
+    background-position: 50px 50px, 50px 50px;
+  }
+}
+
+@keyframes floatGlow1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floatGlow2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-40px, 40px) scale(0.95);
+  }
+
+  66% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #050505;
+  color: #f4f4f5;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: panGrid 20s linear infinite;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.3), transparent 60%);
+  top: -250px;
+  right: -250px;
+  filter: blur(140px);
+  z-index: -1;
+  animation: floatGlow1 12s ease-in-out infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.15), transparent 60%);
+  bottom: -200px;
+  left: -200px;
+  filter: blur(150px);
+  z-index: -1;
+  animation: floatGlow2 15s ease-in-out infinite;
+}
