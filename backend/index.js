@@ -9,14 +9,14 @@ app.use(express.json());
 app.use("/api/analyze", analyzeRoute);
 
 app.get("/", (req, res) => {
-  res.json({ message: "ClaraAI Backend Running 🚀" });
+  res.json({ message: "VeridexAI Backend Running 🚀" });
 });
 
 // API for testing backend 
 app.get("/api/health", (req, res) => {
   res.json({
     status: "OK",
-    service: "ClaraAI Backend",
+    service: "VeridexAI Backend",
     timestamp: new Date()
   });
 });
@@ -24,5 +24,5 @@ app.get("/api/health", (req, res) => {
 const PORT = 3001;
 
 app.listen(PORT, () => {
-  console.log(`ClaraAI backend running on port ${PORT}`);
+  console.log(`VeridexAI backend running on port ${PORT}`);
 });

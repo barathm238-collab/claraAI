@@ -39,6 +39,7 @@ export function generateExecutiveSummary(riskAssessment) {
 
   return "Low risk loan agreement with no significant issues detected.";
 }
+
 export function generateKeyInsights(financialResults, complianceResults) {
   const insights = [];
 
